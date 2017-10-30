@@ -48,6 +48,8 @@ module Blackjack
           puts "\n\n"
           sleep 0.5
         end
+
+        bankrupt_check(player)
       end
     end
 
@@ -135,6 +137,10 @@ module Blackjack
 
       puts Paint["Hand #{index}", :white, :bright]
       puts "Score: #{hand_score}\n\n"
+    end
+
+    def bankrupt_check(player)
+      puts "You're out of funds." if player.money <= 0
     end
   end
 end
