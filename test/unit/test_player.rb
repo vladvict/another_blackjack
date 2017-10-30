@@ -1,6 +1,6 @@
-require_relative '../helper.rb'
+require_relative '../test_helper.rb'
 
-class TestPlayer < Test::Unit::TestCase
+class TestPlayer < Minitest::Test
   def setup
     @player = Blackjack::Player.new(1)
   end
@@ -46,7 +46,6 @@ class TestPlayer < Test::Unit::TestCase
   def test_split_hand
     deck = Blackjack::Deck.new
     deck = with_removed_aces(deck)
-
     2.times do
       @player.hands[0].update_score(deck.pull_one_card)
     end
@@ -62,7 +61,7 @@ class TestPlayer < Test::Unit::TestCase
 
     @player.refresh_hands
 
-    assert_not_equal(old_hand, @player.hands[0])
+    refute_equal(old_hand, @player.hands[0])
   end
 
   private

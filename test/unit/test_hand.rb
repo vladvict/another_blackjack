@@ -1,6 +1,6 @@
-require_relative '../helper.rb'
+require_relative '../test_helper.rb'
 
-class TestHand < Test::Unit::TestCase
+class TestHand < Minitest::Test
   def setup
     @hand = Blackjack::Hand.new
   end

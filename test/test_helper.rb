@@ -1,4 +1,4 @@
 $LOAD_PATH.unshift File.dirname(__FILE__)
 
-require 'test/unit'
+require 'minitest/autorun'
 require_relative '../lib/blackjack'

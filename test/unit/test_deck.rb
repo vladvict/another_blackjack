@@ -1,6 +1,6 @@
-require_relative '../helper.rb'
+require_relative '../test_helper.rb'
 
-class TestDeck < Test::Unit::TestCase
+class TestDeck < Minitest::Test
   def setup
     @deck = Blackjack::Deck.new
   end
@@ -25,7 +25,7 @@ class TestDeck < Test::Unit::TestCase
 
     @deck.fresh_cards
 
-    assert_not_equal(old_cards, @deck.cards)
+    refute_equal(old_cards, @deck.cards)
     assert(@deck.cards.size > old_deck_size)
   end
 end
