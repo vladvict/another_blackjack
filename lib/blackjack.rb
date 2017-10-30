@@ -13,12 +13,11 @@ require 'blackjack/game/condition_check'
 require 'blackjack/game/player_decisions'
 require 'blackjack/game/calculate_scores'
 require 'blackjack/game/after_round_action'
-
-require 'paint'
+require 'blackjack/painter'
 
 module Blackjack
   def self.play
-    puts Paint["=== BLACKJACK ===\n\n", :yellow]
+    puts Painter["=== BLACKJACK ===\n\n", :yellow]
 
     sleep 0.5
 

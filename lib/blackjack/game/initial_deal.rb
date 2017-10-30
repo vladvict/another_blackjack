@@ -16,13 +16,13 @@ module Blackjack
     
     def init_message
       puts "\n=============="
-      puts Paint["Dealing cards:", :yellow]
+      puts Painter["Dealing cards:", :yellow]
       puts "==============\n\n"
     end
 
     def deal_for_players
       @players.each do |player|
-        puts Paint["#{player.name}\n", :blue]
+        puts Painter["#{player.name}\n", :blue]
 
         hand = player.hands[0]
 
@@ -39,7 +39,7 @@ module Blackjack
     end
 
     def deal_for_dealer
-      puts Paint["Dealer's hand", :cyan]
+      puts Painter["Dealer's hand", :cyan]
 
       dealers_hand = @dealer.hand
       card = @deck.pull_one_card

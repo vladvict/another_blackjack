@@ -10,7 +10,7 @@ module Blackjack
 
     def play
       play_round until @finished
-      puts Paint['Bye! Come back to recoup.', :yellow, :black]
+      puts Painter['Bye! Come back to recoup.', :yellow, :bg_black]
     end
 
     private

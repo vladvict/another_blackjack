@@ -36,7 +36,7 @@ module Blackjack
         abort if counter >= 3
 
         message = 'Want to play another round?'
-        puts Paint[message, :white, :black]
+        puts Painter[message, :white, :bg_black]
         
         puts 'y (yes) or n (no)'
         choice = gets.chomp.downcase

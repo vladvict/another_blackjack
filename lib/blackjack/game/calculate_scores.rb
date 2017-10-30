@@ -16,14 +16,14 @@ module Blackjack
 
     def init_message
       puts "\n=============="
-      puts Paint["Round results:", :yellow]
+      puts Painter["Round results:", :yellow]
       puts "==============\n\n"
     end
 
     def calculate_scores
       @players.each do |player|
         players_name = "=== #{player.name} ===\n"
-        puts Paint[players_name, :blue]
+        puts Painter[players_name, :blue]
 
         hands_size = player.hands.size
 
@@ -49,7 +49,7 @@ module Blackjack
           sleep 0.5
         end
 
-        bankrupt_check(player)
+        bankruptcy_check(player)
       end
     end
 
@@ -135,12 +135,12 @@ module Blackjack
     def show_hand(hand_score, hand_index, hands_size)
       index = hands_size > 1 ? hand_index + 1 : nil
 
-      puts Paint["Hand #{index}", :white, :bright]
+      puts Painter["Hand #{index}", :white, :bright]
       puts "Score: #{hand_score}\n\n"
     end
 
-    def bankrupt_check(player)
-      puts "You're out of funds." if player.money <= 0
+    def bankruptcy_check(player)
+      puts Painter["You're out of funds, bye", :magenta] if player.money <= 0
     end
   end
 end

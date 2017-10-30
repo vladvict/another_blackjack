@@ -13,13 +13,13 @@ module Blackjack
 
     def init_message
       puts "\n==================="
-      puts Paint["Ok, let's make bets", :yellow]
+      puts Painter["Ok, let's make bets", :yellow]
       puts "===================\n\n"
     end
 
     def iterate_players
       @players.each do |player|
-        puts Paint["#{player.name}\n", :blue]
+        puts Painter["#{player.name}\n", :blue]
 
         money = player.money
         puts "(current amount of money: #{money})"

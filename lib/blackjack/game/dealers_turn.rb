@@ -15,7 +15,7 @@ module Blackjack
     
     def init_message
       puts "\n=============="
-      puts Paint["Dealer's turn:", :yellow]
+      puts Painter["Dealer's turn:", :yellow]
       puts "==============\n\n"
     end
 
@@ -31,7 +31,7 @@ module Blackjack
       end
 
       last_message = "Dealer's score is: #{@hand.score}\n\n"
-      puts Paint[last_message, :white, :bright]
+      puts Painter[last_message, :white, :bright]
     end
 
     def draw_card
@@ -65,13 +65,13 @@ module Blackjack
 
     def show_hand
       puts '-----'
-      puts Paint['Hand:', :white, :bright]
+      puts Painter['Hand:', :white, :bright]
       @hand.show_stats
     end
 
     def skip_message
       message = "Every players's hands are BUSTED\n\n"
-      puts Paint[message, :white, :bright]
+      puts Painter[message, :white, :bright]
     end
 
     def all_hands_are_busted?

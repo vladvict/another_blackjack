@@ -15,14 +15,14 @@ module Blackjack
 
     def init_message
       puts "\n=============="
-      puts Paint["Player's turn:", :yellow]
+      puts Painter["Player's turn:", :yellow]
       puts "==============\n\n"
     end
 
     def iterate_players
       @players.each do |player|
         players_name = "=== Turn of #{player.name} ===\n"
-        puts Paint[players_name, :blue]
+        puts Painter[players_name, :blue]
 
         can_split = ConditionCheck.can_split?(player)
 
@@ -156,7 +156,7 @@ module Blackjack
       hand_index += 1 if hand_index
 
       puts '------------'
-      puts Paint["Your hand #{hand_index}:", :white, :bright]
+      puts Painter["Your hand #{hand_index}:", :white, :bright]
       hand.show_stats
     end
   end

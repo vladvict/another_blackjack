@@ -4,7 +4,7 @@ module Blackjack
 
     def get_bet(money)
       bet_message = "You can bet from 1 to #{money}:"
-      puts Paint[bet_message, :white, :black]
+      puts Painter[bet_message, :white, :bg_black]
       bet = 0
 
       loop do
@@ -15,7 +15,7 @@ module Blackjack
           break
         else
           retry_message = "Choose valid bet (between 1 and #{money}):"
-          puts Paint[retry_message, :white, :black]
+          puts Painter[retry_message, :white, :bg_black]
         end
       end
 
@@ -24,7 +24,7 @@ module Blackjack
 
     def player_ace_value(hand_score)
       ace_values = "(#{Constants::ACE_VALUES[0]} or #{Constants::ACE_VALUES[1]} )"
-      puts Paint["You have 'ace'. Choose value #{ace_values}:", :white, :black]
+      puts Painter["You have 'ace'. Choose value #{ace_values}:", :white, :bg_black]
       puts "(your current score: #{hand_score})\n"
 
       chosen_value = 0
@@ -36,7 +36,7 @@ module Blackjack
           chosen_value = value
           break
         else
-          puts Paint["Choose valid 'ace' value #{ace_values}:", :white, :black]
+          puts Painter["Choose valid 'ace' value #{ace_values}:", :white, :bg_black]
 
         end
       end
@@ -47,7 +47,7 @@ module Blackjack
     def number_of_players
       max_players = Constants::MAX_PLAYERS
       message = "How many players will take part? (from 1 to #{max_players}) \n"
-      puts Paint[message, :white, :black]
+      puts Painter[message, :white, :bg_black]
 
       range = (1..max_players)
       counter = 0
@@ -55,7 +55,7 @@ module Blackjack
       
       loop do
         if counter >= 5
-          puts Paint['Next time..', :yellow, :black]
+          puts Painter['Next time..', :yellow, :bg_black]
 
           abort
         end
@@ -68,7 +68,7 @@ module Blackjack
         else
           counter += 1
           repeat_message = "Please type the number between 1 and #{max_players}: \n"
-          puts Paint[repeat_message, :white, :black]
+          puts Painter[repeat_message, :white, :bg_black]
         end
 
       end
@@ -83,7 +83,7 @@ module Blackjack
 
       loop do
         message = "Choose additional bet (from 1 to #{allowed}):"
-        puts Paint[message, :white, :black]
+        puts Painter[message, :white, :bg_black]
 
         choice = gets.chomp.to_i
 
@@ -140,7 +140,7 @@ module Blackjack
       puts ' d - for "double down"   surr - for "surrender"'
       puts ' split - for "split" hand' if can_split
       puts " help - for more detailed description on available moves\n\n"
-      puts Paint['Choose your next move:', :white, :black]
+      puts Painter['Choose your next move:', :white, :bg_black]
     end
   end
 end
