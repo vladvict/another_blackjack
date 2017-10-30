@@ -3,7 +3,7 @@ module Blackjack
     MONEY_AT_START = 500
     MAX_PLAYERS = 3
 
-    DILLER_STAND_VALUE = 17
+    DEALER_STAND_VALUE = 17
     BLACKJACK_VALUE = 21
 
     FACES = ['J', 'Q', 'K']

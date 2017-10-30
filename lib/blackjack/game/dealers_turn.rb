@@ -57,7 +57,7 @@ module Blackjack
     def stand?
       score = @hand.score
       
-      if score >= Constants::DILLER_STAND_VALUE
+      if score >= Constants::DEALER_STAND_VALUE
         @hand.status = :busted if score > Constants::BLACKJACK_VALUE
         true
       end
